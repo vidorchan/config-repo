@@ -9,6 +9,10 @@ admin:
   content: ${admin.name} + ${admin.password}
 
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/babies
+    username: root
+    password: root
   jpa:
     properties:
       hibernate:
