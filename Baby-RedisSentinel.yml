@@ -1,3 +1,5 @@
-redis:
-  master: master
-  sentinels: 127.0.0.1:26379
+spring:
+  redis:
+    sentinels:
+      master: master
+      nodes: 127.0.0.1:26379
