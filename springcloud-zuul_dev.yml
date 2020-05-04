@@ -1,0 +1,32 @@
+server:
+  port: 8891
+spring:
+  application:
+    name: springcloud-zuul
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8881/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    springcloud-provider: /zuul-provider/**
+    springcloud-consumer: /zuul-consumer/**
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: debug
+        cloud:
+          sleuth: debug
